@@ -4,6 +4,7 @@ public class Usertype {
     public enum role {
         ADMIN,
         USER,
+        STUDENT,
         TEACHER
     }
 }
