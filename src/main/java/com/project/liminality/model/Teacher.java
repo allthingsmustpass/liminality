@@ -1,5 +1,6 @@
 package com.project.liminality.model;
 
+import java.util.List;
 import org.hibernate.annotations.GenericGenerator;
 import com.project.liminality.enums.Usertype.role;
 import jakarta.persistence.Entity;
@@ -26,14 +27,12 @@ public class Teacher extends User {
     public Teacher() {
     }
 
-    public Teacher(String id, String username, String password, String email, role usertype, String id2, String name,
-            String surname, Course ongoingcourse, role usertype2) {
-        super(id, username, password, email, usertype);
-        id = id2;
+    public Teacher(String id, String name, String surname, List<Course> ongoingcourse, role usertype) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.ongoingcourse = ongoingcourse;
-        usertype = usertype2;
+        this.usertype = usertype;
     }
 
     public String getId() {
@@ -60,11 +59,11 @@ public class Teacher extends User {
         this.surname = surname;
     }
 
-    public Course getOngoingcourse() {
+    public List<Course> getOngoingcourse() {
         return ongoingcourse;
     }
 
-    public void setOngoingcourse(Course ongoingcourse) {
+    public void setOngoingcourse(List<Course> ongoingcourse) {
         this.ongoingcourse = ongoingcourse;
     }
 
