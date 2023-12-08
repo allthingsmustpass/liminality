@@ -18,22 +18,22 @@ public class Teacher extends User {
 
     private String name;
     private String surname;
-    private String ongoingcourses;
+    private Course ongoingcourse;
 
     @Enumerated(EnumType.STRING)
     private role usertype;
 
+    public Teacher() {
+    }
+
     public Teacher(String id, String username, String password, String email, role usertype, String id2, String name,
-            String surname, String ongoingcourses, role usertype2) {
+            String surname, Course ongoingcourse, role usertype2) {
         super(id, username, password, email, usertype);
         id = id2;
         this.name = name;
         this.surname = surname;
-        this.ongoingcourses = ongoingcourses;
+        this.ongoingcourse = ongoingcourse;
         usertype = usertype2;
-    }
-
-    public Teacher() {
     }
 
     public String getId() {
@@ -60,12 +60,12 @@ public class Teacher extends User {
         this.surname = surname;
     }
 
-    public String getOngoingcourses() {
-        return ongoingcourses;
+    public Course getOngoingcourse() {
+        return ongoingcourse;
     }
 
-    public void setOngoingcourses(String ongoingcourses) {
-        this.ongoingcourses = ongoingcourses;
+    public void setOngoingcourse(Course ongoingcourse) {
+        this.ongoingcourse = ongoingcourse;
     }
 
     public role getUsertype() {
@@ -78,7 +78,7 @@ public class Teacher extends User {
 
     @Override
     public String toString() {
-        return "Teacher [id=" + id + ", name=" + name + ", surname=" + surname + ", ongoingcourses=" + ongoingcourses
+        return "Teacher [id=" + id + ", name=" + name + ", surname=" + surname + ", ongoingcourse=" + ongoingcourse
                 + ", usertype=" + usertype + "]";
     }
 }
