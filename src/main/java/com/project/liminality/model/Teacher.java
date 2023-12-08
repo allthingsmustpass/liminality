@@ -18,7 +18,7 @@ public class Teacher extends User {
 
     private String name;
     private String surname;
-    private Course ongoingcourse;
+    private List<Course> ongoingcourse;
 
     @Enumerated(EnumType.STRING)
     private role usertype;
